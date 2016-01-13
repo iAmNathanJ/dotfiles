@@ -58,8 +58,15 @@ make_cd() {
   mkdir $1 && cd $1
 }
 
+git_compact() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
 # Aliases
 alias mkcd=make_cd
+alias gmini=git_compact
 alias cpath="pwd | pbcopy"
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
