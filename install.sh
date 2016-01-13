@@ -1,8 +1,8 @@
 
 # Backup originals
-mkdir ~/dotfiles_old
-mv ~/.zshrc ~/dotfiles_old/.zshrc
-mv ~/.gitignore ~/dotfiles_old/.gitignore
+mkdir -p ~/dotfiles_old
+mv -f ~/.zshrc ~/dotfiles_old/.zshrc
+mv -f ~/.gitignore ~/dotfiles_old/.gitignore_global
 
 # Create symlinks
 ln -s ~/dotfiles/.zshrc ~/.zshrc
