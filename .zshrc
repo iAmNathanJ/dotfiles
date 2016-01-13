@@ -60,7 +60,7 @@ make_cd() {
 
 git_compact() {
   git add .
-  git commit -m "$1"
+  git commit -m $1
   git push
 }
 
