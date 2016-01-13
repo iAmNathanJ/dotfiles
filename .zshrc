@@ -68,6 +68,7 @@ git_compact() {
 alias mkcd=make_cd
 alias gmini=git_compact
 alias cpath="pwd | pbcopy"
+alias reset="source ~/.zshrc"
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
