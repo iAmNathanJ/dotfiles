@@ -53,22 +53,21 @@ plugins=(git)
 
 # User configuration
 
-# Functions for Alias
-make_cd() {
+# Functions
+mkcd() {
   mkdir $1 && cd $1
 }
 
-git_compact() {
+gmini() {
   git add .
   git commit -m $1
   git push
 }
 
 # Aliases
-alias mkcd=make_cd
-alias gmini=git_compact
 alias cpath="pwd | pbcopy"
 alias reset="source ~/.zshrc"
+alias hg="history | grep "
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"

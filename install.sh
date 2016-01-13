@@ -4,13 +4,13 @@ dotfiles=( ".zshrc" ".gitignore_global" )
 # Ceate backup directory
 mkdir -p ~/dotfiles_old
 
-for i in "${dotfiles[@]}"
+for file in "${dotfiles[@]}"
 do
   # if file exists, back it up
-  [ ! -f ~/$i ] || mv -f ~/$i ~/dotfiles_old/$i
+  [ ! -f ~/$file ] || mv -f ~/$file ~/dotfiles_old/$file
 
   # create symlink
-  ln -s $PWD/$i ~/$i
+  ln -s $PWD/$file ~/$file
 done
 
 ##################
