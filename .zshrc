@@ -53,6 +53,13 @@ plugins=(git)
 
 # User configuration
 
+# Functions for Alias
+make_cd() {
+  mkdir $1 && cd $1
+}
+
+alias mkcd=make_cd
+
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
