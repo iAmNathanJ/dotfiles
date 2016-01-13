@@ -22,5 +22,5 @@ done
 # [ ! -f ~/.gitignore_global ] || mv -f ~/.gitignore_global ~/dotfiles_old/.gitignore_global
 
 # Create symlinks
-# ln -s ~/dotfiles/.zshrc ~/.zshrc
-# ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+# ln -s $PWD/.zshrc ~/.zshrc
+# ln -s $PWD/.gitignore_global ~/.gitignore_global
