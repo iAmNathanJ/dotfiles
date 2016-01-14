@@ -3,7 +3,7 @@ mkcd() {
   mkdir $1 && cd $1
 }
 
-gca() {
+ga() {
   git add .
   git commit -m $1
 }
