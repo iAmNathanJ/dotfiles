@@ -8,7 +8,6 @@ for file in "${dotfiles[@]}"
 do
   # if file exists, back it up
   [ ! -f ~/$file ] || mv -f ~/$file ~/dotfiles_old/$file
-
   # create symlink
   ln -s $PWD/$file ~/$file
 done
