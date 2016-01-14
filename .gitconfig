@@ -1,0 +1,9 @@
+[user]
+	name = Nate Jacobs
+	email = jacobs@heysparkbox.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = matching
+[color]
+	ui = true
