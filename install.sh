@@ -2,8 +2,11 @@
 dotfiles=( ".bashrc" ".zshrc" ".gitconfig" ".gitignore_global" )
 
 # Ceate backup directory
+echo "Creating backup directory..."
 mkdir -p ~/dotfiles_old
 
+# Loop through dotfiles and...
+echo "Creating symlinks..."
 for file in "${dotfiles[@]}"
 do
   # if file exists, back it up
@@ -11,6 +14,8 @@ do
   # create symlink
   ln -s $PWD/$file ~/$file
 done
+
+echo "Existing dotfiles have been backed up in ~/dotfiles_old"
 
 ##################
 # Manual Version
