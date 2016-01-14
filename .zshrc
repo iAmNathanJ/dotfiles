@@ -58,10 +58,9 @@ mkcd() {
   mkdir $1 && cd $1
 }
 
-gmini() {
+gca() {
   git add .
   git commit -m $1
-  git push
 }
 
 # Aliases
