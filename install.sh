@@ -1,5 +1,5 @@
 # Define all dotfiles
-dotfiles=( ".zshrc" ".gitignore_global" )
+dotfiles=( ".bashrc" ".zshrc" ".gitconfig" ".gitignore_global" )
 
 # Ceate backup directory
 mkdir -p ~/dotfiles_old
