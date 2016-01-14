@@ -65,8 +65,8 @@ gmini() {
 }
 
 # Aliases
-alias cpath="pwd | pbcopy"
 alias reset="source ~/.zshrc"
+alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
