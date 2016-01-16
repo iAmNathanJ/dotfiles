@@ -56,8 +56,8 @@ plugins=(git)
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source ~/.bashrc
 source $ZSH/oh-my-zsh.sh
+source ~/.bashrc
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
