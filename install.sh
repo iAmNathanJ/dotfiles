@@ -1,5 +1,5 @@
 # Define all dotfiles
-dotfiles=( ".bashrc" ".zshrc" ".gitconfig" ".gitignore_global" ".jshintrc" ".editorconfig" )
+dotfiles=( ".bashrc" ".zshrc" ".editorconfig" ".jshintrc" ".atom" ".gitconfig" ".gitignore_global" )
 
 # Ceate backup directory
 echo "Creating backup directory..."
