@@ -53,6 +53,21 @@ plugins=(git)
 
 # User configuration
 
+# Functions
+mkcd() {
+  mkdir -p $1 && cd $1
+}
+
+ga() {
+  git add . && git commit -m $1
+}
+
+# Aliases
+alias reset="source ~/.zshrc"
+alias cpath="pwd | pbcopy"
+alias hg="history | grep "
+
+
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
