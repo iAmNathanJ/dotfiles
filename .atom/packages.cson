@@ -1,6 +1,7 @@
 'packages': [
   'jshint'
   'parcel'
+  'release-notes'
   'seti-syntax'
   'seti-ui'
   'atom-dark-syntax'
@@ -47,7 +48,6 @@
   'notifications'
   'open-on-github'
   'package-generator'
-  'release-notes'
   'settings-view'
   'snippets'
   'spell-check'

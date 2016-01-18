@@ -66,6 +66,7 @@ ga() {
 alias reset="source ~/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
+alias c="clear"
 
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
