@@ -1,13 +1,16 @@
 "*":
-  "exception-reporting":
-    userId: "4856caa4-fe5e-3823-f705-91971cd75670"
-  welcome:
-    showOnStartup: false
   core:
     themes: [
       "seti-ui"
       "seti-syntax"
     ]
   editor:
+    fontSize: 15
     invisibles: {}
+  "exception-reporting":
+    userId: "4856caa4-fe5e-3823-f705-91971cd75670"
+  jshint:
+    supportLintingJsx: true
   "one-dark-ui": {}
+  welcome:
+    showOnStartup: false
