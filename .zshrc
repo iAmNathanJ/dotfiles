@@ -58,6 +58,11 @@ mkcd() {
   mkdir -p $1 && cd $1
 }
 
+a() {
+  echo "DON'T FORGET TO BRANCH!"
+  atom $1
+}
+
 # ga() {
 #   git add . && git commit -m $1
 # }
