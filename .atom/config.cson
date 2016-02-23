@@ -1,16 +1,25 @@
 "*":
   core:
+    disabledPackages: [
+      "jshint"
+    ]
     themes: [
-      "seti-ui"
-      "seti-syntax"
+      "one-dark-ui"
+      "spacegray-dark-neue-syntax"
     ]
   editor:
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
+    scrollPastEnd: true
   "exception-reporting":
     userId: "4856caa4-fe5e-3823-f705-91971cd75670"
   jshint:
     supportLintingJsx: true
-  "one-dark-ui": {}
+  "one-dark-ui":
+    layoutMode: "Spacious"
+  "terminal-plus":
+    core: {}
+    style: {}
+    toggles: {}
   welcome:
     showOnStartup: false

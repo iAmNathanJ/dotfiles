@@ -19,3 +19,151 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+'.source.scss':
+
+  'Base Styles':
+    'prefix': 'css'
+    'body': """
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+      html, body { min-height: 100%; }
+      body { box-sizing: border-box; }
+
+      $1
+    """
+
+  'Colors':
+    'prefix': 'colors'
+    'body': """
+      $pure-black: #000;
+      $pure-white: #fff;
+      $black: #222;
+      $white: #efefef;
+
+      $black10: rgba(#000, 0.1);
+      $black20: rgba(#000, 0.2);
+      $black30: rgba(#000, 0.3);
+      $black40: rgba(#000, 0.4);
+      $black50: rgba(#000, 0.5);
+      $black70: rgba(#000, 0.7);
+      $black80: rgba(#000, 0.8);
+      $black90: rgba(#000, 0.9);
+
+      $white10: rgba(#fff, 0.1);
+      $white20: rgba(#fff, 0.2);
+      $white30: rgba(#fff, 0.3);
+      $white40: rgba(#fff, 0.4);
+      $white50: rgba(#fff, 0.5);
+      $white60: rgba(#fff, 0.6);
+      $white70: rgba(#fff, 0.7);
+      $white80: rgba(#fff, 0.8);
+      $white90: rgba(#fff, 0.9);
+    """
+
+  'Section Header':
+    'prefix': 'head'
+    'body': """
+      /*
+      ================================================================
+        $1
+      ================================================================
+      */
+    """
+
+'.source.css':
+
+  'Base Styles':
+    'prefix': 'css'
+    'body': """
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+      html, body { min-height: 100%; }
+      body { box-sizing: border-box; }
+
+      $1
+    """
+
+  'Section Header':
+    'prefix': 'head'
+    'body': """
+      /*
+      ================================================================
+        $1
+      ================================================================
+      */
+    """
+
+'.source.js':
+
+  'Use Strict':
+    'prefix': 'use'
+    'body': "'use strict';\n\n$1"
+
+  'Gulp Task':
+    'prefix': 'task'
+    'body': """
+      gulp.task('$1', function() {
+        return gulp.src($2)
+          .pipe($3)
+          .pipe(gulp.dest($4));
+      });
+    """
+
+  'Section Header':
+    'prefix': 'head'
+    'body': """
+      /*
+      ================================================================
+        $1
+      ================================================================
+      */
+    """
+
+'.text.html':
+
+  'HTML5 Boilerplate':
+    'prefix': 'boiler'
+    'body': """
+      <!doctype html>
+      <html class="no-js" lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+          <title>$1</title>
+          <meta name="description" content="$2">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="apple-touch-icon" href="apple-touch-icon.png">
+          <link rel="stylesheet" href="css/main.min.css">
+        </head>
+        <body>
+
+          <!-- main -->
+          <main>
+            $3
+          </main>
+          <!--/main -->
+
+          <script src="js/main.min.js"></script>
+          <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+          <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+          </script>
+        </body>
+      </html>
+    """

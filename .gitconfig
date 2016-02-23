@@ -9,3 +9,5 @@
 	ui = true
 [core]
 	editor = vi
+[alias]
+	co = checkout
