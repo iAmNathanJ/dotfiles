@@ -130,6 +130,15 @@
       */
     """
 
+  'Tape Test':
+    'prefix': 'tape'
+    'body': """
+      test('$1', t => {
+        t.$2($3);
+        t.end();
+      });
+    """
+
 '.text.html':
 
   'HTML5 Boilerplate':
