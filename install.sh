@@ -20,15 +20,3 @@ do
 done
 
 echo "Existing dotfiles have been backed up in ~/dotfiles_old"
-
-##################
-# Manual Version
-##################
-
-# Backup files
-# [ ! -f ~/.zshrc ] || mv -f ~/.zshrc ~/dotfiles_old/.zshrc
-# [ ! -f ~/.gitignore_global ] || mv -f ~/.gitignore_global ~/dotfiles_old/.gitignore_global
-
-# Create symlinks
-# ln -s $PWD/.zshrc ~/.zshrc
-# ln -s $PWD/.gitignore_global ~/.gitignore_global
