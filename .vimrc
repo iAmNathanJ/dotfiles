@@ -16,11 +16,33 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Turn on ruler
+set ruler
+
+" Set status bar
+set laststatus=2
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
+" Turn on numbering and relative numbering
+set number
+set relativenumber
+
+" Set indentation style
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set autoindent
+set smartindent
+
+" Set splitting
+set splitright
+set splitbelow
+
 " Switch syntax highlighting on
 syntax on
+colorscheme sierra
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
