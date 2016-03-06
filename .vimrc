@@ -46,3 +46,10 @@ colorscheme sierra
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
+
+" Pathogen
+execute pathogen#infect()
+
+" Mappings
+map <C-n> :NERDTreeToggle<CR>
+
