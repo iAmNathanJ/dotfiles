@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/sparkuser/code/learn/vim'
-let g:netrw_dirhist_2='/Users/sparkuser/code/learn'
-let g:netrw_dirhist_3='/Users/sparkuser/code/learn/ruby'
-let g:netrw_dirhist_4='/Users/sparkuser/code/learn/ruby/game-of-life'
-let g:netrw_dirhist_5='/Users/sparkuser/code/learn/js/web-worker'
-let g:netrw_dirhist_6='/Users/sparkuser/code/learn/vim'
-let g:netrw_dirhist_7='/Users/sparkuser/code/learn/ruby/game-of-life'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/sparkuser/dotfiles'
