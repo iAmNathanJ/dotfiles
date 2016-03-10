@@ -28,6 +28,7 @@ set backspace=indent,eol,start
 " Turn on numbering and relative numbering
 set number
 set relativenumber
+set numberwidth=5
 
 " Set indentation style
 set tabstop=2

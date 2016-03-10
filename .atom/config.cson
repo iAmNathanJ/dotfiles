@@ -5,10 +5,10 @@
     ]
     themes: [
       "one-dark-ui"
-      "spacegray-dark-neue-syntax"
+      "chester-atom-syntax"
     ]
   editor:
-    fontSize: 15
+    fontSize: 17
     invisibles: {}
     scrollPastEnd: true
   "exception-reporting":
