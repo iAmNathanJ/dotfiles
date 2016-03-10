@@ -2,6 +2,7 @@
 "
 " Referenced here: http://www.benorenstein.com/blog/your-first-vimrc-should-be-nearly-empty/
 
+
 " Original Author:	 Bram Moolenaar <Bram@vim.org>
 " Made more minimal by:  Ben Orenstein
 " Last change:	         2012 Jan 20
