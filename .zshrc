@@ -58,21 +58,11 @@ mkcd() {
   mkdir -p $1 && cd $1
 }
 
-a() {
-  echo "DON'T FORGET TO BRANCH!"
-  atom $1
-}
-
-# ga() {
-#   git add . && git commit -m $1
-# }
-
 # Aliases
 alias reset="source ~/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
-
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
