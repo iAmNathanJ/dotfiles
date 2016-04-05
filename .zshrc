@@ -58,6 +58,22 @@ mkcd() {
   mkdir -p $1 && cd $1
 }
 
+ip() {
+  IP=$(ifconfig | grep 'inet 1' | cut -c 6- | awk 'NR==2 {print $1}')
+  echo $IP | pbcopy
+  echo $IP
+}
+
+# No arguments: `git status`
+# With arguments: acts like `git`
+g() {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+
 # Aliases
 alias reset="source ~/.zshrc"
 alias cpath="pwd | pbcopy"
