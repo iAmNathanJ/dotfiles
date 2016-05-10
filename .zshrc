@@ -58,6 +58,12 @@ mkcd() {
   mkdir -p $1 && cd $1
 }
 
+
+function git-poooosh() {
+  gp && gp origin :$1 && gb -d $1
+}
+alias gpp='git-poooosh'
+
 ip() {
   IP=$(ifconfig | grep 'inet 1' | cut -c 6- | awk 'NR==2 {print $1}')
   echo $IP | pbcopy
@@ -79,6 +85,9 @@ alias reset="source ~/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
+
+# git Aliases
+alias gl="git log --pretty=oneline"
 
 export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -114,4 +123,5 @@ source ~/.bashrc
 export NVM_DIR="/Users/sparkuser/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postgres stuff to PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
