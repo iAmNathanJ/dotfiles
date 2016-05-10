@@ -11,3 +11,4 @@
 	editor = vim
 [alias]
 	co = checkout
+	l = log --oneline --decorate --graph --all
