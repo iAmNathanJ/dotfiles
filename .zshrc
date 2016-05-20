@@ -60,7 +60,7 @@ mkcd() {
 
 
 function git-poooosh() {
-  gp && gp origin :$1 && gb -d $1
+  git push && git push origin :$1 && git branch -d $1
 }
 alias gpp='git-poooosh'
 
@@ -68,6 +68,13 @@ ip() {
   IP=$(ifconfig | grep 'inet 1' | cut -c 6- | awk 'NR==2 {print $1}')
   echo $IP | pbcopy
   echo $IP
+}
+
+function tmp() {
+  pushd .
+  WRECKDIR=`mktemp -d /tmp/huzzah.XXXXXXXXX` && {
+    cd $WRECKDIR
+  }
 }
 
 # No arguments: `git status`
