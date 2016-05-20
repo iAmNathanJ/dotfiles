@@ -12,3 +12,7 @@
 [alias]
 	co = checkout
 	l = log --oneline --decorate --graph --all
+[pull]
+	ff = only
+[merge]
+	ff = only
