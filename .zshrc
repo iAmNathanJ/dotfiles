@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/sparkuser/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,17 +54,16 @@ plugins=(git)
 # User configuration
 
 # Functions
-mkcd() {
+function mkcd() {
   mkdir -p $1 && cd $1
 }
-
 
 function git-poooosh() {
   git push && git push origin :$1 && git branch -d $1
 }
 alias gpp='git-poooosh'
 
-ip() {
+function ip() {
   IP=$(ifconfig | grep 'inet 1' | cut -c 6- | awk 'NR==2 {print $1}')
   echo $IP | pbcopy
   echo $IP
@@ -79,7 +78,7 @@ function tmp() {
 
 # No arguments: `git status`
 # With arguments: acts like `git`
-g() {
+function g() {
   if [[ $# > 0 ]]; then
     git $@
   else
@@ -92,11 +91,9 @@ alias reset="source ~/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
+alias rp="rails s -b 0.0.0.0"
 
-# git Aliases
-alias gl="git log --pretty=oneline"
-
-export PATH="/usr/local/bin:/Users/sparkuser/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -127,7 +124,7 @@ source ~/.bashrc
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="/Users/sparkuser/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postgres stuff to PATH
