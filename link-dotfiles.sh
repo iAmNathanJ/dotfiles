@@ -26,7 +26,7 @@ do
   [ ! -d ~/$file ] || mv -f ~/$file ~/code/dotfiles_old/$file
 
   # create symlink
-  ln -s $PWD/$file ~/$file
+  ln -sfFv $(pwd)/$file ~/$file
 done
 
 echo "Existing dotfiles have been backed up in ~/code/dotfiles_old"
