@@ -15,3 +15,6 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 # Get RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable --autolibs=enabled --ruby --rails
+
+# Get NVM
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
