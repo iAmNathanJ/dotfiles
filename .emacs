@@ -1,3 +1,5 @@
+(package-initialize)
+
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -16,6 +18,10 @@
  '(blink-cursor-mode nil)
  '(custom-enabled-themes (quote (tango-dark)))
  '(menu-bar-mode nil)
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa" . "https://elpa.gnu.org/packages/"))))
  '(tool-bar-mode nil))
 
 (custom-set-faces
