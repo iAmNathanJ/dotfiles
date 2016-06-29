@@ -13,20 +13,24 @@ dotfiles=(
 
 # Ceate backup directory
 echo "Creating backup directory..."
-mkdir -p ~/code/dotfiles_old
+mkdir -p $HOME/code/dotfiles_old
 
 # Loop through dotfiles and...
 echo "Creating symlinks..."
 for file in "${dotfiles[@]}"
 do
+
+  # CHECK IF FILE IS SYMLINK
+  # GO TO NEXT FILE IF SYMLINK
+
   # if file exists, back it up
-  [ ! -f ~/$file ] || mv -f ~/$file ~/code/dotfiles_old/$file
+  [ ! -f ~/$file ] || mv -f $HOME/$file $HOME/code/dotfiles_old/$file
 
   # if it's a directory, back it up
-  [ ! -d ~/$file ] || mv -f ~/$file ~/code/dotfiles_old/$file
+  [ ! -d ~/$file ] || mv -f $HOME/$file $HOME/code/dotfiles_old/$file
 
   # create symlink
-  ln -sfFv $(pwd)/$file ~/$file
+  ln -sfFv $PWD/$file $HOME/$file
 done
 
 echo "Existing dotfiles have been backed up in ~/code/dotfiles_old"
