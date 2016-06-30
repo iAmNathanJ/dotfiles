@@ -9,6 +9,7 @@
 (require 'org)
 (require 'helm)
 (require 'helm-projectile)
+(require 'diff-hl)
 
 ;diff-hl changes
 (set-face-foreground 'diff-hl-change "#447799")
@@ -18,10 +19,13 @@
 (set-face-foreground 'diff-hl-delete "#aa2222")
 (set-face-background 'diff-hl-delete "#aa2222")
 
+
 ;(setq markdown-command "marked")
 (defun turn-on-orgtbl () (orgtbl-mode 1))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook 'turn-on-orgtbl)
+
+(which-key-mode)
 
 (defun markdown-grip ()
   "Load Markdown Preview in Browser"
@@ -39,14 +43,12 @@
   (kill-process "md-grip")
   (kill-buffer "markdown-preview"))
 
-(global-set-key (kbd "C-M-p") 'markdown-grip)
-(global-set-key (kbd "C-M-k") 'markdown-grip-kill)
-
 ; kill defaults
 (blink-cursor-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq-default truncate-lines 1)
+(global-auto-revert-mode 1)
 
 ; git diffs via diff-hl
 (global-diff-hl-mode)
@@ -95,5 +97,7 @@
 (defun jump-up-5 ()
   (interactive)
   (next-line -5))
+
+(setq multi-term-program "/bin/zsh")
 
 (load "~/code/dotfiles/emacs/key-bindings.el")

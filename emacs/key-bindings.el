@@ -1,3 +1,7 @@
+; markdown preview
+(global-set-key (kbd "C-M-p") 'markdown-grip)
+(global-set-key (kbd "C-M-k") 'markdown-grip-kill)
+
 ; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-M-f") 'helm-projectile-find-file)
