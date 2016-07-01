@@ -26,6 +26,9 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook 'turn-on-orgtbl)
 
+(add-hook 'god-mode-enabled-hook (lambda () (set-cursor-color "#dd0093")))
+(add-hook 'god-mode-disabled-hook (lambda () (set-cursor-color "#ffffff")))
+
 (which-key-mode)
 
 (defun markdown-grip ()
