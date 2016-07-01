@@ -1,3 +1,6 @@
+; thanks be to god
+(global-set-key (kbd "<escape>") 'god-local-mode)
+
 ; markdown preview
 (global-set-key (kbd "C-M-p") 'markdown-grip)
 (global-set-key (kbd "C-M-k") 'markdown-grip-kill)

@@ -7,6 +7,7 @@
   (exec-path-from-shell-initialize))
 
 (require 'org)
+(require 'god-mode)
 (require 'helm)
 (require 'helm-projectile)
 (require 'diff-hl)
@@ -49,6 +50,7 @@
 (tool-bar-mode -1)
 (setq-default truncate-lines 1)
 (global-auto-revert-mode 1)
+(setq inhibit-startup-message t)
 
 ; git diffs via diff-hl
 (global-diff-hl-mode)
