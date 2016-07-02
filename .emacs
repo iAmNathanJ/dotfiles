@@ -16,10 +16,14 @@
 (which-key-mode)
 
 ; god-mode
-(add-hook 'change-major-mode-hook 'god-local-mode)
-(add-hook 'god-mode-enabled-hook (lambda () (set-cursor-color "#dd0093")))
-(add-hook 'god-mode-disabled-hook (lambda () (set-cursor-color "#ffffff")))
-(add-hook 'minibuffer-setup-hook (lambda () (set-cursor-color "#ffffff")))
+(god-mode)
+(defun god-cursor ()
+  (set-cursor-color (if (or god-local-mode buffer-read-only) "#dd0093" "#ffffff")))
+
+(add-hook 'god-mode-enabled-hook 'god-cursor)
+(add-hook 'god-mode-disabled-hook 'god-cursor)
+(add-hook 'minibuffer-setup-hook 'god-cursor)
+(add-hook 'buffer-list-update-hook 'god-cursor)
 
 ; gfm-mode and orgtbl-mode  on markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
