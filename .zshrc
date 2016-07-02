@@ -79,5 +79,11 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+if [ -n "$INSIDE_EMACS" ]; then
+    export TERM=xterm-256color
+    # Disable set title
+    # prompt_pure_set_title() {}
+fi
+
 PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postgres stuff to PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

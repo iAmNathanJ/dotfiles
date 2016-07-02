@@ -8,28 +8,22 @@
 
 (require 'org)
 (require 'god-mode)
+(require 'god-mode-isearch)
 (require 'helm)
 (require 'helm-projectile)
 (require 'diff-hl)
 
-;diff-hl changes
-(set-face-foreground 'diff-hl-change "#447799")
-(set-face-background 'diff-hl-change "#447799")
-(set-face-foreground 'diff-hl-insert "#99ad6a")
-(set-face-background 'diff-hl-insert "#99ad6a")
-(set-face-foreground 'diff-hl-delete "#aa2222")
-(set-face-background 'diff-hl-delete "#aa2222")
+(which-key-mode)
 
-
-;(setq markdown-command "marked")
-(defun turn-on-orgtbl () (orgtbl-mode 1))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-(add-hook 'gfm-mode-hook 'turn-on-orgtbl)
-
+; god-mode
+(add-hook 'change-major-mode-hook 'god-local-mode)
 (add-hook 'god-mode-enabled-hook (lambda () (set-cursor-color "#dd0093")))
 (add-hook 'god-mode-disabled-hook (lambda () (set-cursor-color "#ffffff")))
+(add-hook 'minibuffer-setup-hook (lambda () (set-cursor-color "#ffffff")))
 
-(which-key-mode)
+; gfm-mode and orgtbl-mode  on markdown
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+(add-hook 'gfm-mode-hook (lambda () (orgtbl-mode 1)))
 
 (defun markdown-grip ()
   "Load Markdown Preview in Browser"
@@ -58,14 +52,18 @@
 ; git diffs via diff-hl
 (global-diff-hl-mode)
 
+;diff-hl colors
+(set-face-foreground 'diff-hl-change "#447799")
+(set-face-background 'diff-hl-change "#447799")
+(set-face-foreground 'diff-hl-insert "#99ad6a")
+(set-face-background 'diff-hl-insert "#99ad6a")
+(set-face-foreground 'diff-hl-delete "#aa2222")
+(set-face-background 'diff-hl-delete "#aa2222")
+
 ; make it pretty
 (load-theme 'jbeans t)
 (setq linum-format " %d ")
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Monaco")))))
 
 (global-linum-mode t)
@@ -77,10 +75,6 @@
 (ac-config-default)
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
     ("a6a3e2a5c14c8b6365914cf0bd5592f2c428a6b7ec39bda60dcab55843fb5da2" . t)))
@@ -94,7 +88,6 @@
  '(split-height-threshold nil)
  '(split-width-threshold 0))
 
-; Key Bindings
 (defun jump-down-5 ()
   (interactive)
   (next-line 5))
