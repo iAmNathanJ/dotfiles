@@ -2,7 +2,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-; fix path issues
+;; fix path issues
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
@@ -12,10 +12,11 @@
 (require 'helm)
 (require 'helm-projectile)
 (require 'diff-hl)
+(require 'multiple-cursors)
 
 (which-key-mode)
 
-; god-mode
+;; god-mode
 (god-mode)
 (defun god-cursor ()
   (set-cursor-color (if (or god-local-mode buffer-read-only) "#dd0093" "#ffffff")))
@@ -25,7 +26,16 @@
 (add-hook 'minibuffer-setup-hook 'god-cursor)
 (add-hook 'buffer-list-update-hook 'god-cursor)
 
-; gfm-mode and orgtbl-mode  on markdown
+;; modes and stuff
+;;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json?\\'" . json-mode))
+;;(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+
+;; gfm-mode and orgtbl-mode  on markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 (add-hook 'gfm-mode-hook (lambda () (orgtbl-mode 1)))
 
@@ -45,39 +55,50 @@
   (kill-process "md-grip")
   (kill-buffer "markdown-preview"))
 
-; kill defaults
+;;  defaults
 (blink-cursor-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq-default truncate-lines 1)
 (global-auto-revert-mode 1)
 (setq inhibit-startup-message t)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default c-basic-offset 2)
+(setq-default css-indent-offset 2)
+(setq confirm-kill-emacs 'yes-or-no-p)
 
-; git diffs via diff-hl
+(global-linum-mode t)
+(custom-set-variables '(linum-format (quote "%4d ")))
+(set-face-foreground 'linum "goldenrod3")
+
+;; git diffs via diff-hl
 (global-diff-hl-mode)
+(add-hook 'diff-hl-mode-hook 'diff-hl-margin-mode)
+(set-variable 'diff-hl-side 'right)
 
-;diff-hl colors
+;; diff-hl colors
 (set-face-foreground 'diff-hl-change "#447799")
 (set-face-background 'diff-hl-change "#447799")
 (set-face-foreground 'diff-hl-insert "#99ad6a")
-(set-face-background 'diff-hl-insert "#99ad6a")
+(set-face-background 'diff-hl-insert "#99aa6a")
 (set-face-foreground 'diff-hl-delete "#aa2222")
 (set-face-background 'diff-hl-delete "#aa2222")
 
-; make it pretty
+;; (set-face-foreground 'linum "goldenrod3")
+
+;; make it pretty
 (load-theme 'jbeans t)
 (setq linum-format " %d ")
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Monaco")))))
 
-(global-linum-mode t)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
-(setq-default css-indent-offset 2)
-
-;default auto-complete
+;; default auto-complete
 (ac-config-default)
 
+;; Customize
 (custom-set-variables
  '(custom-safe-themes
    (quote
