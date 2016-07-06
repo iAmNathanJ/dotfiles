@@ -11,6 +11,7 @@
 (require 'god-mode-isearch)
 (require 'helm)
 (require 'helm-projectile)
+(require 'web-mode)
 (require 'diff-hl)
 (require 'multiple-cursors)
 
@@ -27,13 +28,14 @@
 (add-hook 'buffer-list-update-hook 'god-cursor)
 
 ;; modes and stuff
-;;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs?\\'" . handlebars-mode))
+(add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js?\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json?\\'" . json-mode))
-;;(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 
 ;; gfm-mode and orgtbl-mode  on markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
