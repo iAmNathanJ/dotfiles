@@ -61,14 +61,11 @@ function cdl() {
 # Aliases
 alias gs="git status -s"
 alias gpp="git-poooosh"
-alias reset="source ~/.zshrc"
+alias reset="source $HOME/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
 alias rp="rails s -b 0.0.0.0"
-
-export PATH="/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bashrc
@@ -85,5 +82,8 @@ if [ -n "$INSIDE_EMACS" ]; then
     # prompt_pure_set_title() {}
 fi
 
+PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postgres stuff to PATH
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$PATH"

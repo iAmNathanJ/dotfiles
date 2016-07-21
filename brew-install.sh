@@ -7,6 +7,7 @@ brew install zsh
 brew install zsh-completions
 brew install gpg
 brew install postgres
+brew install mysql
 brew install imagemagick
 
 # Get Oh My Zsh
