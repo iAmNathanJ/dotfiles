@@ -3,6 +3,7 @@
 
 ;; thanks be to god
 (global-set-key (kbd "<escape>") 'god-local-mode)
+(global-set-key (kbd "M-SPC") 'god-local-mode)
 (define-key god-local-mode-map (kbd "i") 'god-local-mode)
 (define-key god-local-mode-map (kbd ".") 'repeat)
 (define-key isearch-mode-map (kbd "<escape>") 'god-mode-isearch-activate)
@@ -13,6 +14,9 @@
 (global-set-key (kbd "C-M-b") 'helm-buffers-list)
 (global-set-key (kbd "C-M-f") 'helm-projectile-find-file)
 (global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
+
+;; Magit
+(global-set-key (kbd "C-M-g") 'magit-status)
 
 ;; multiple cursors
 (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
