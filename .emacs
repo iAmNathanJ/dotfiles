@@ -28,20 +28,22 @@
 (defun c/god-mode-update-cursor ()
   (let ((limited-colors-p (> 257 (length (defined-colors)))))
     (cond (god-local-mode (progn
-                            (set-face-background 'mode-line (if limited-colors-p "white" "SteelBlue4"))
-                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "SteelBlue4"))))
+                            (set-face-background 'mode-line (if limited-colors-p "white" "#de5577"))
+                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "#de5577"))))
           (t (progn
-               (set-face-background 'mode-line (if limited-colors-p "black" "#0a2832"))
-               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "#0a2832")))))))
+               (set-face-background 'mode-line (if limited-colors-p "black" "SteelBlue4"))
+               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "SteelBlue4")))))))
 
 (add-hook 'god-mode-enabled-hook 'c/god-mode-update-cursor)
 (add-hook 'god-mode-disabled-hook 'c/god-mode-update-cursor)
 (add-hook 'minibuffer-setup-hook 'c/god-mode-update-cursor)
+(add-hook 'minibuffer-exit-hook 'c/god-mode-update-cursor)
 (add-hook 'buffer-list-update-hook 'c/god-mode-update-cursor)
 
 (add-hook 'god-mode-enabled-hook 'god-cursor)
 (add-hook 'god-mode-disabled-hook 'god-cursor)
 (add-hook 'minibuffer-setup-hook 'god-cursor)
+(add-hook 'minibuffer-exit-hook 'god-cursor)
 (add-hook 'buffer-list-update-hook 'god-cursor)
 
 ;; modes and stuff
@@ -106,13 +108,13 @@
 (set-face-foreground 'diff-hl-delete "#aa2222")
 (set-face-background 'diff-hl-delete "#aa2222")
 
-;; (set-face-foreground 'linum "goldenrod3")
-
 ;; make it pretty
 (load-theme 'jbeans t)
 (setq linum-format " %d ")
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Monaco")))))
+
+(set-face-foreground 'linum "goldenrod3")
 
 ;; default auto-complete
 (ac-config-default)
