@@ -28,8 +28,8 @@
 (defun c/god-mode-update-cursor ()
   (let ((limited-colors-p (> 257 (length (defined-colors)))))
     (cond (god-local-mode (progn
-                            (set-face-background 'mode-line (if limited-colors-p "white" "#dd0093"))
-                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "#dd0093"))))
+                            (set-face-background 'mode-line (if limited-colors-p "white" "SteelBlue4"))
+                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "SteelBlue4"))))
           (t (progn
                (set-face-background 'mode-line (if limited-colors-p "black" "#0a2832"))
                (set-face-background 'mode-line-inactive (if limited-colors-p "black" "#0a2832")))))))
