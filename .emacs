@@ -31,8 +31,8 @@
                             (set-face-background 'mode-line (if limited-colors-p "white" "#de5577"))
                             (set-face-background 'mode-line-inactive (if limited-colors-p "white" "#de5577"))))
           (t (progn
-               (set-face-background 'mode-line (if limited-colors-p "black" "SteelBlue4"))
-               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "SteelBlue4")))))))
+               (set-face-background 'mode-line (if limited-colors-p "black" "#6272a4"))
+               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "#6272a4")))))))
 
 (add-hook 'god-mode-enabled-hook 'c/god-mode-update-cursor)
 (add-hook 'god-mode-disabled-hook 'c/god-mode-update-cursor)
@@ -51,6 +51,7 @@
 (add-to-list 'auto-mode-alist '("\\.hbs?\\'" . handlebars-mode))
 (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js?\\'" . js2-mode))
+
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json?\\'" . json-mode))
@@ -109,12 +110,13 @@
 (set-face-background 'diff-hl-delete "#aa2222")
 
 ;; make it pretty
-(load-theme 'jbeans t)
-(setq linum-format " %d ")
+(load-theme 'dracula t)
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Monaco")))))
 
-(set-face-foreground 'linum "goldenrod3")
+;; line numbers
+(setq linum-format " %d ")
+(set-face-foreground 'linum "#6272a4")
 
 ;; default auto-complete
 (ac-config-default)
