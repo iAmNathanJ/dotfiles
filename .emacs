@@ -14,6 +14,7 @@
 (require 'web-mode)
 (require 'diff-hl)
 (require 'multiple-cursors)
+(require 'neotree)
 
 (which-key-mode)
 
@@ -55,7 +56,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json?\\'" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; gfm-mode and orgtbl-mode  on markdown
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
@@ -94,7 +95,6 @@
 
 (global-linum-mode t)
 (custom-set-variables '(linum-format (quote "%4d ")))
-(set-face-foreground 'linum "goldenrod3")
 
 ;; git diffs via diff-hl
 (global-diff-hl-mode)
