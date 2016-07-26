@@ -19,7 +19,7 @@
 (global-set-key (kbd "C-M-g") 'magit-status)
 
 ;; neotree
-(global-set-key (kbd "C-M-t") 'neotree-toggle)
+(global-set-key (kbd "M-\\") 'neotree-toggle)
 
 ;; multiple cursors
 (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
@@ -38,6 +38,7 @@
 (global-set-key (kbd "M-]") 'indent-rigidly-right-to-tab-stop)
 (global-set-key (kbd "M-[") 'indent-rigidly-left-to-tab-stop)
 (global-set-key (kbd "M-z") 'undo)
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 
 ;; (global-set-key (kbd "C-c") 'quit)
