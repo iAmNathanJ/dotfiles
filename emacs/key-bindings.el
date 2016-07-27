@@ -32,6 +32,10 @@
 ;; helpers
 (global-set-key (kbd "M-n") 'jump-down-5)
 (global-set-key (kbd "M-p") 'jump-up-5)
+(global-set-key (kbd "M-<up>") (lambda () (interactive) (stationary-scroll-up 1)))
+(global-set-key (kbd "M-<down>") (lambda () (interactive) (stationary-scroll-down 1)))
+(global-set-key (kbd "C-M-<up>") (lambda () (interactive) (stationary-scroll-up 5)))
+(global-set-key (kbd "C-M-<down>") (lambda () (interactive) (stationary-scroll-down 5)))
 (global-set-key (kbd "M-W") 'toggle-truncate-lines)
 (global-set-key (kbd "M-=") 'text-scale-increase)
 (global-set-key (kbd "M--") 'text-scale-decrease)
