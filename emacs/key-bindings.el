@@ -18,6 +18,9 @@
 ;; magit
 (global-set-key (kbd "C-M-g") 'magit-status)
 
+;; multi-term
+(global-set-key (kbd "C-M-t") (lambda () (interactive) (multi-term-dedicated-toggle) (multi-term-dedicated-select)))
+
 ;; neotree
 (global-set-key (kbd "M-\\") 'neotree-toggle)
 
@@ -30,8 +33,8 @@
 (global-set-key (kbd "C-M-k") 'markdown-grip-kill)
 
 ;; helpers
-(global-set-key (kbd "M-n") 'jump-down-5)
-(global-set-key (kbd "M-p") 'jump-up-5)
+(global-set-key (kbd "M-n") 'cursor-jump-down)
+(global-set-key (kbd "M-p") 'cursor-jump-up)
 (global-set-key (kbd "M-<up>") (lambda () (interactive) (stationary-scroll-up 1)))
 (global-set-key (kbd "M-<down>") (lambda () (interactive) (stationary-scroll-down 1)))
 (global-set-key (kbd "C-M-<up>") (lambda () (interactive) (stationary-scroll-up 5)))
@@ -44,6 +47,8 @@
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-M-=") 'enlarge-window)
+(global-set-key (kbd "C-M--") 'shrink-window)
 
 ;; (global-set-key (kbd "C-c") 'quit)
 ;; (global-set-key (kbd "M-p") 

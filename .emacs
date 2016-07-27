@@ -15,6 +15,7 @@
 (require 'diff-hl)
 (require 'multiple-cursors)
 (require 'neotree)
+(require 'winring)
 
 ;; modes and stuff
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -44,9 +45,13 @@
 (setq-default css-indent-offset 2)
 (setq confirm-kill-emacs 'yes-or-no-p)
 (global-linum-mode t)
+(setq ring-bell-function 'ignore)
 
 ;; show key options
 (which-key-mode)
+
+;; winring
+(winring-initialize)
 
 ;; git diffs
 (global-diff-hl-mode)
