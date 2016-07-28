@@ -1,4 +1,14 @@
-# Define all dotfiles
+GREEN='\033[1;32m'
+NC='\033[0m'
+
+# export dotfiles dir
+export DOTFILES_DIR=$PWD
+
+# Ceate backup directory
+echo "Creating backup directory..."
+mkdir -p $DOTFILES_DIR/dotfiles_old
+
+# All dotfiles
 dotfiles=(
   ".bashrc"
   ".zshrc"
@@ -11,26 +21,25 @@ dotfiles=(
   ".oh-my-zsh/themes/nj.zsh-theme"
   )
 
-# Ceate backup directory
-echo "Creating backup directory..."
-mkdir -p $HOME/code/dotfiles_old
-
 # Loop through dotfiles and...
 echo "Creating symlinks..."
 for file in "${dotfiles[@]}"
 do
 
+  # TODO ############################
   # CHECK IF FILE IS SYMLINK
   # GO TO NEXT FILE IF SYMLINK
-
+   ###################################
+    
   # if file exists, back it up
-  [ ! -f ~/$file ] || mv -f $HOME/$file $HOME/code/dotfiles_old/$file
+  # [ ! -f ~/$file ] || mv -f $HOME/$file $DOTFILES_DIR/dotfiles_old/$file
 
   # if it's a directory, back it up
-  [ ! -d ~/$file ] || mv -f $HOME/$file $HOME/code/dotfiles_old/$file
+  # [ ! -d ~/$file ] || mv -f $HOME/$file $DOTFILES_DIR/dotfiles_old/$file
 
   # create symlink
-  ln -sfFv $PWD/$file $HOME/$file
+  echo "${GREEN}✓${NC} $file"
+  # ln -sfFv $PWD/$file $HOME/$file
 done
 
-echo "Existing dotfiles have been backed up in ~/code/dotfiles_old"
+echo "Existing dotfiles have been backed up in $DOTFILES_DIR/dotfiles_old"

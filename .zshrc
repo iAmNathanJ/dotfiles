@@ -70,8 +70,10 @@ alias rp="rails s -b 0.0.0.0"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bashrc
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# Environment
+export DOTFILES_DIR="$HOME/.dotfiles"
+
+export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

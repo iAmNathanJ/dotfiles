@@ -50,6 +50,3 @@
 (global-set-key (kbd "C-M-=") 'enlarge-window)
 (global-set-key (kbd "C-M--") 'shrink-window)
 
-;; (global-set-key (kbd "C-c") 'quit)
-;; (global-set-key (kbd "M-p") 
-
