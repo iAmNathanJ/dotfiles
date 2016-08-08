@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+# Path to dotfiles
+export DOTFILES_DIR=~/.dotfiles
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -16,7 +19,7 @@ export UPDATE_ZSH_DAYS=13
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/code/dotfiles/.oh-my-zsh/custom
+ZSH_CUSTOM=$DOTFILES_DIR/.oh-my-zsh/custom
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/ or ZSH_CUSTOM specified above
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -71,10 +74,17 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.bashrc
 
 # Environment
-export DOTFILES_DIR="$HOME/.dotfiles"
-
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
+# GPG
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+
+#NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -89,3 +99,8 @@ PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postg
 PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH"
+
+
+# Automatically added by Platform.sh CLI installer
+export PATH="/Users/nj/.platformsh/bin:$PATH"
+. '/Users/nj/.platformsh/shell-config.rc' 2>/dev/null

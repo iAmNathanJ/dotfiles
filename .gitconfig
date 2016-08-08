@@ -1,6 +1,7 @@
 [user]
 	name = iAmNathanJ
 	email = jacobs@heysparkbox.com
+	signingkey = FCFA6D4AEC146194
 [credential]
 	helper = osxkeychain
 [push]
@@ -18,3 +19,5 @@
 	ff = only
 [help]
 	autoCorrect = -1
+[commit]
+	gpgsign = true

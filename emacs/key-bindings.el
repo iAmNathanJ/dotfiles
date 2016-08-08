@@ -19,7 +19,8 @@
 (global-set-key (kbd "C-M-g") 'magit-status)
 
 ;; multi-term
-(global-set-key (kbd "C-M-t") (lambda () (interactive) (multi-term-dedicated-toggle) (multi-term-dedicated-select)))
+(global-set-key (kbd "C-M-t") 'multi-term-dedicated-toggle)
+(global-set-key (kbd "M-t") 'multi-term-dedicated-select)
 
 ;; neotree
 (global-set-key (kbd "M-\\") 'neotree-toggle)
@@ -47,6 +48,10 @@
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-M-=") 'enlarge-window)
-(global-set-key (kbd "C-M--") 'shrink-window)
+(global-set-key (kbd "C-M-=") (lambda () (interactive) (enlarge-window 3)))
+(global-set-key (kbd "C-M--") (lambda () (interactive) (shrink-window 3)))
+(global-set-key (kbd "C-M-0") (lambda () (interactive) (enlarge-window-horizontally 3)))
+(global-set-key (kbd "C-M-9") (lambda () (interactive) (shrink-window-horizontally 3)))
 
+(global-set-key (kbd "M-<left>") 'back-to-indentation)
+(global-set-key (kbd "M-<right>") 'move-end-of-line)

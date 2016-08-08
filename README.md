@@ -1,2 +1,6 @@
-# dotfiles
-My dotfiles
+# Dotfiles
+
+```
+$ ./setup.sh
+```
+
