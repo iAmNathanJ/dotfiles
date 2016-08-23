@@ -21,3 +21,4 @@
 	autoCorrect = -1
 [commit]
 	gpgsign = true
+	template = /Users/nj/.gitmessage

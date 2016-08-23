@@ -35,7 +35,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq-default truncate-lines 1)
-(global-auto-revert-mode 1)
+(global-auto-revert-mode t) 
 (setq inhibit-startup-message t)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -48,6 +48,9 @@
 (setq confirm-kill-emacs 'yes-or-no-p)
 (global-linum-mode t)
 (setq ring-bell-function 'ignore)
+
+;; helm
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
 
 ;; show key options
 (which-key-mode)
