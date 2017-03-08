@@ -8,7 +8,7 @@ export DOTFILES_DIR=~/.dotfiles
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="nj"
+ZSH_THEME="pure"
 
 # ZSH auto-update (in days)
 export UPDATE_ZSH_DAYS=13
@@ -68,6 +68,7 @@ alias reset="source $HOME/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
+alias ftk="sudo killall VDCAssistant"
 alias rp="rails s -b 0.0.0.0"
 
 source $ZSH/oh-my-zsh.sh
