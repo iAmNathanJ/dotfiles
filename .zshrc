@@ -36,6 +36,11 @@ function git-poooosh() {
   git push && git push origin :$1 && git branch -d $1
 }
 
+# Stash with untracked and message
+function stash() {
+  git stash save -u $1
+}
+
 # Get my IP
 function ip() {
   IP=$(ifconfig | grep 'inet 1' | cut -c 6- | awk 'NR==2 {print $1}')
@@ -53,6 +58,8 @@ function tmp() {
 
 # Clean Desktop
 function cdt() {
+  mv -iv $HOME/Desktop/*.jpg ~/.Trash/
+  mv -iv $HOME/Desktop/*.gif ~/.Trash/
   mv -iv $HOME/Desktop/*.png ~/.Trash/
 }
 
@@ -97,6 +104,8 @@ fi
 
 PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postgres stuff to PATH
+PATH="$PATH:/etc/sonar/bin/macosx-universal-64"
+PATH="$PATH:/etc/sonar-scanner/bin"
 PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH"

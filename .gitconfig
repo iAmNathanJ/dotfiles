@@ -24,3 +24,5 @@
 [commit]
 	gpgsign = true
 	template = /Users/nj/.gitmessage
+[rebase]
+	autostash = true
