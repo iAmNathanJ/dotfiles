@@ -1,3 +1,6 @@
+.DS_Store
 .vim/.netrwhist
-*
+.git-secrets
+.hyper_plugins
 dotfiles_old
+gpg

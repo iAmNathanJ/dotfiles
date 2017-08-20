@@ -79,6 +79,7 @@ alias ftk="sudo killall VDCAssistant"
 alias rp="rails s -b 0.0.0.0"
 
 source $ZSH/oh-my-zsh.sh
+source $DOTFILES_DIR/.auto-secrets.sh
 source $HOME/.bashrc
 
 # Environment

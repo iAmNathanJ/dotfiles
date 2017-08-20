@@ -26,3 +26,5 @@
 	template = /Users/nj/.gitmessage
 [rebase]
 	autostash = true
+[secrets]
+	providers = /Users/nj/code/secrets/provider.js
