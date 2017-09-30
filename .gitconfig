@@ -10,10 +10,11 @@
 	ui = true
 [core]
 	editor = vim
+	excludesfile = /Users/nj/.gitignore_global
 [alias]
 	co = checkout
-	l = log --oneline --decorate --graph --all
-  find = "!f() { git log --grep=\"$1\" --color; }; f"
+	l = log --oneline --decorate
+	find = "!f() { git log --grep=\"$1\" --color; }; f"
 	pushf = push --force-with-lease
 [pull]
 	ff = only
@@ -28,3 +29,6 @@
 	autostash = true
 [secrets]
 	providers = /Users/nj/code/secrets/provider.js
+
+[init]
+	templateDir = /Users/nj/.git-template

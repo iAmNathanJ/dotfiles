@@ -69,7 +69,10 @@ function cdl() {
 }
 
 # Aliases
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chrome-debug="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --remote-debugging-port=9222"
 alias gs="git status -s"
+alias lg="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset)  %C(magenta)%C(bold)-%C(reset)  %C(yellow)%cd  %C(blue)%cn'"
 alias gpp="git-poooosh"
 alias reset="source $HOME/.zshrc"
 alias cpath="pwd | pbcopy"
