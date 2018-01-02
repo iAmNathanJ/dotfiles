@@ -8,7 +8,8 @@ export DOTFILES_DIR=~/.dotfiles
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="pure"
+# Disabled with empty theme
+ZSH_THEME=""
 
 # ZSH auto-update (in days)
 export UPDATE_ZSH_DAYS=13
@@ -72,7 +73,7 @@ function cdl() {
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-debug="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --remote-debugging-port=9222"
 alias gs="git status -s"
-alias lg="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset)  %C(magenta)%C(bold)-%C(reset)  %C(yellow)%cd  %C(blue)%cn'"
+alias lg="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset) %<(60,trunc)%s %<(14)%C(magenta)%ad  %C(magenta)%C(bold)-%C(reset)  %C(blue)%cn%C(reset)'"
 alias gpp="git-poooosh"
 alias reset="source $HOME/.zshrc"
 alias cpath="pwd | pbcopy"
@@ -84,6 +85,10 @@ alias rp="rails s -b 0.0.0.0"
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES_DIR/.auto-secrets.sh
 source $HOME/.bashrc
+
+# Load pure prompt
+autoload -U promptinit; promptinit
+prompt pure
 
 # Environment
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
