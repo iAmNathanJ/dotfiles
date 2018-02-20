@@ -42,6 +42,11 @@ function stash() {
   git stash save -u $1
 }
 
+# Cherry Pick
+function gcp() {
+  git cherry-pick $1
+}
+
 # Get my IP
 function ip() {
   IP=$(ifconfig | grep 'inet 1' | cut -c 6- | awk 'NR==2 {print $1}')
@@ -85,6 +90,7 @@ alias rp="rails s -b 0.0.0.0"
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES_DIR/.auto-secrets.sh
 source $HOME/.bashrc
+source $HOME/.personal
 
 # Load pure prompt
 autoload -U promptinit; promptinit

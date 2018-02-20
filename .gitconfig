@@ -1,7 +1,7 @@
 [user]
 	name = iAmNathanJ
 	email = jacobs@heysparkbox.com
-	signingkey = FCFA6D4AEC146194
+	signingkey = iAmNathanJ <jacobs@heysparkbox.com>
 [credential]
 	helper = osxkeychain
 [push]
@@ -32,3 +32,7 @@
 
 [init]
 	templateDir = /Users/nj/.git-template
+[log]
+	date = relative
+[branch]
+	autosetuprebase = always
