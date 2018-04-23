@@ -86,6 +86,7 @@ alias hg="history | grep "
 alias c="clear"
 alias ftk="sudo killall VDCAssistant"
 alias rp="rails s -b 0.0.0.0"
+alias fu="git rebase -i HEAD~2"
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES_DIR/.auto-secrets.sh
