@@ -74,19 +74,24 @@ function cdl() {
   mv -iv $HOME/Downloads/* ~/.Trash/
 }
 
+function diff() {
+  git diff -- "$@" ':(exclude)package-lock.json'
+}
+
 # Aliases
+alias reset="source $HOME/.zshrc"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-debug="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --remote-debugging-port=9222"
 alias gs="git status -s"
 alias lg="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset) %<(60,trunc)%s %<(14)%C(magenta)%ad  %C(magenta)%C(bold)-%C(reset)  %C(blue)%cn%C(reset)'"
 alias gpp="git-poooosh"
-alias reset="source $HOME/.zshrc"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
 alias ftk="sudo killall VDCAssistant"
 alias rp="rails s -b 0.0.0.0"
 alias fu="git rebase -i HEAD~2"
+alias fresh="rm .npmrc package-lock.json && rm -rf node_modules && npm i --force --registry=https://registry.npmjs.org/"
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES_DIR/.auto-secrets.sh
@@ -119,14 +124,19 @@ if [ -n "$INSIDE_EMACS" ]; then
 fi
 
 PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin" # Add postgres stuff to PATH
+PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 PATH="$PATH:/etc/sonar/bin/macosx-universal-64"
 PATH="$PATH:/etc/sonar-scanner/bin"
-PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+PATH="$PATH:$HOME/.rvm/bin"
 PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH"
 
+export PATH="$HOME/.bin:$PATH"
 
-# Automatically added by Platform.sh CLI installer
-export PATH="/Users/nj/.platformsh/bin:$PATH"
-. '/Users/nj/.platformsh/shell-config.rc' 2>/dev/null
+# node/npm bash completion
+# autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit -i
+# autoload bashcompinit
+# bashcompinit
+source <(node --completion-bash)
+source <(npm completion)
