@@ -13,6 +13,7 @@ dotfiles=(
   ".gitconfig"
   ".gitmessage"
   ".gitignore_global"
+  ".gitmessage"
   ".vim"
   ".vimrc"
 )
@@ -36,6 +37,7 @@ do
   # create symlink
   ln -sfFv $DOTFILES_DIR/$file $HOME/$file
   echo "${GREEN}✓${NC} $file"
+  ln -sfFv $PWD/$file $HOME/ $file
 done
 
 echo "Existing dotfiles have been backed up in $DOTFILES_DIR/dotfiles_old"

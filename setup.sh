@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 $PWD/scripts/mac-setup.sh
 $PWD/scripts/brew-install.sh

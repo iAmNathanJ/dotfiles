@@ -9,8 +9,8 @@
 [color]
 	ui = true
 [core]
-	editor = vim
-	excludesfile = /Users/nj/.gitignore_global
+	editor = code -w
+	excludesfile = ~/.gitignore_global
 [alias]
 	co = checkout
 	l = log --oneline --decorate
@@ -24,14 +24,14 @@
 	autoCorrect = -1
 [commit]
 	gpgsign = true
-	template = /Users/nj/.gitmessage
+	template = ~/.gitmessage
 [rebase]
 	autostash = true
 [secrets]
-	providers = /Users/nj/code/secrets/provider.js
+	providers = ~/code/secrets/provider.js
 
 [init]
-	templateDir = /Users/nj/.git-template
+	templateDir = ~/.git-template
 [log]
 	date = relative
 [branch]

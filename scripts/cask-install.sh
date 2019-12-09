@@ -14,3 +14,5 @@ brew cask install rocket
 
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
+
+brew cask install gpg-suite
