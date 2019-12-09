@@ -1,16 +1,16 @@
 brew cask install iterm2
-brew cask install emacs
-brew cask install atom
+brew cask install visual-studio-code
 
 brew cask install spectacle
 brew cask install alfred
 brew cask install slack
 brew cask install flux
-brew cask install caffeine
 brew cask install dropbox
 
 brew cask install google-chrome
 brew cask install firefox
-brew cask install virtualbox
 
-brew cask install mojibar
+brew cask install rocket
+
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code

@@ -36,3 +36,5 @@
 	date = relative
 [branch]
 	autosetuprebase = always
+[gpg]
+	program = gpg

@@ -1,40 +1,33 @@
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+# Environment
+export DOTFILES_DIR="$HOME/.dotfiles"
+export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
-# Path to dotfiles
-export DOTFILES_DIR=~/.dotfiles
+PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+PATH="$PATH:/etc/sonar/bin/macosx-universal-64"
+PATH="$PATH:/etc/sonar-scanner/bin"
+PATH="$PATH:$HOME/.rvm/bin"
+PATH="$PATH:$HOME/.composer/vendor/bin"
+PATH="$PATH:$HOME/.bin"
+export PATH="$PATH"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# Disabled with empty theme
-ZSH_THEME=""
+export EDITOR=code
 
-# ZSH auto-update (in days)
-export UPDATE_ZSH_DAYS=13
+autoload -U compaudit compinit
+compinit
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES_DIR/.oh-my-zsh/custom
-
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/ or ZSH_CUSTOM specified above
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# Load pure prompt
+autoload -U promptinit && promptinit
+prompt pure
 
 # Make and Change Dir
 function mkcd() {
   mkdir -p $1 && cd $1
 }
 
-# Push Merge
-function git-poooosh() {
-  git push && git push origin :$1 && git branch -d $1
+# Merge, push, and cleanup
+function git-merge-push-clean() {
+  git merge $1 && git push && git push origin :$1 && git branch -d $1
 }
 
 # Stash with untracked and message
@@ -62,7 +55,7 @@ function tmp() {
   }
 }
 
-# Clean Desktop
+# Clean Desktop Images
 function cdt() {
   mv -iv $HOME/Desktop/*.jpg ~/.Trash/
   mv -iv $HOME/Desktop/*.gif ~/.Trash/
@@ -82,28 +75,22 @@ function diff() {
 alias reset="source $HOME/.zshrc"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-debug="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --remote-debugging-port=9222"
+
+alias gp="git push -u origin HEAD"
+alias gmp="git-poooosh"
+alias gb="git branch"
+alias gc="git commit"
+alias gco="git checkout"
+alias gcb="git checkout -b"
 alias gs="git status -s"
-alias lg="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset) %<(60,trunc)%s %<(14)%C(magenta)%ad  %C(magenta)%C(bold)-%C(reset)  %C(blue)%cn%C(reset)'"
-alias gpp="git-poooosh"
+alias gl="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset) %<(60,trunc)%s %<(14)%C(magenta)%ad  %C(magenta)%C(bold)-%C(reset)  %C(blue)%cn%C(reset)'"
+alias fu="git rebase -i HEAD~2"
+
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
 alias ftk="sudo killall VDCAssistant"
-alias rp="rails s -b 0.0.0.0"
-alias fu="git rebase -i HEAD~2"
 alias fresh="rm .npmrc package-lock.json && rm -rf node_modules && npm i --force --registry=https://registry.npmjs.org/"
-
-source $ZSH/oh-my-zsh.sh
-source $DOTFILES_DIR/.auto-secrets.sh
-source $HOME/.bashrc
-source $HOME/.personal
-
-# Load pure prompt
-autoload -U promptinit; promptinit
-prompt pure
-
-# Environment
-export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
 # GPG
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
@@ -117,26 +104,18 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-if [ -n "$INSIDE_EMACS" ]; then
-    export TERM=xterm-256color
-    # Disable set title
-    # prompt_pure_set_title() {}
-fi
-
-PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
-PATH="$PATH:/etc/sonar/bin/macosx-universal-64"
-PATH="$PATH:/etc/sonar-scanner/bin"
-PATH="$PATH:$HOME/.rvm/bin"
-PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="$PATH"
-
-export PATH="$HOME/.bin:$PATH"
-
 # node/npm bash completion
-# autoload -Uz compinit && compinit
-autoload -Uz bashcompinit && bashcompinit -i
+# autoload -Uz bashcompinit && bashcompinit -i
 # autoload bashcompinit
 # bashcompinit
-source <(node --completion-bash)
-source <(npm completion)
+# . <(node --completion-bash)
+# . <(npm completion)
+
+. $DOTFILES_DIR/partials/bindings.sh
+. $DOTFILES_DIR/partials/directories.sh
+. $DOTFILES_DIR/partials/auto-secrets.sh
+. $HOME/.bashrc
+. $HOME/.personal
+. $HOME/.secrets
+
+cd ~/code

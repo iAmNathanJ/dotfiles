@@ -1,28 +1,23 @@
 GREEN='\033[1;32m'
 NC='\033[0m'
 
-# export dotfiles dir
-export DOTFILES_DIR=$PWD
-
 # Ceate backup directory
-echo "Creating backup directory..."
 mkdir -p $DOTFILES_DIR/dotfiles_old
 
 # All dotfiles
 dotfiles=(
   ".bashrc"
   ".zshrc"
+  ".npmrc"
   ".editorconfig"
-  ".jshintrc"
   ".gitconfig"
+  ".gitmessage"
   ".gitignore_global"
   ".vim"
   ".vimrc"
-  ".oh-my-zsh/themes/nj.zsh-theme"
-  )
+)
 
-# Loop through dotfiles and...
-echo "Creating symlinks..."
+echo "Linking dotfiles..."
 for file in "${dotfiles[@]}"
 do
 
@@ -31,7 +26,7 @@ do
   # NOTIFY OF EXISTING SYMLINK
   # GO TO NEXT FILE
   ###################################
-    
+
   # if file exists, back it up
   # [ ! -f ~/$file ] || mv -f $HOME/$file $DOTFILES_DIR/dotfiles_old/$file
 
@@ -39,8 +34,8 @@ do
   # [ ! -d ~/$file ] || mv -f $HOME/$file $DOTFILES_DIR/dotfiles_old/$file
 
   # create symlink
+  ln -sfFv $DOTFILES_DIR/$file $HOME/$file
   echo "${GREEN}✓${NC} $file"
-  # ln -sfFv $PWD/$file $HOME/$file
 done
 
 echo "Existing dotfiles have been backed up in $DOTFILES_DIR/dotfiles_old"

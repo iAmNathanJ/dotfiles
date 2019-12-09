@@ -129,3 +129,6 @@ jspm_packages
 
 # vscode
 .vscode
+
+# git-secrets
+.gitallowed
