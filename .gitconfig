@@ -29,6 +29,7 @@
 	autostash = true
 [secrets]
 	providers = ~/code/secrets/provider.js
+	providers = /Users/nathanjacobs/code/secrets/provider.js
 
 [init]
 	templateDir = ~/.git-template
