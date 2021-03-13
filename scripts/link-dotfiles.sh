@@ -2,7 +2,7 @@ GREEN='\033[1;32m'
 NC='\033[0m'
 
 # Ceate backup directory
-mkdir -p $DOTFILES_DIR/dotfiles_old
+mkdir -p $DOTFILES/dotfiles_old
 
 # All dotfiles
 dotfiles=(
@@ -29,15 +29,15 @@ do
   ###################################
 
   # if file exists, back it up
-  # [ ! -f ~/$file ] || mv -f $HOME/$file $DOTFILES_DIR/dotfiles_old/$file
+  # [ ! -f ~/$file ] || mv -f $HOME/$file $DOTFILES/dotfiles_old/$file
 
   # if it's a directory, back it up
-  # [ ! -d ~/$file ] || mv -f $HOME/$file $DOTFILES_DIR/dotfiles_old/$file
+  # [ ! -d ~/$file ] || mv -f $HOME/$file $DOTFILES/dotfiles_old/$file
 
   # create symlink
-  ln -sfFv $DOTFILES_DIR/$file $HOME/$file
+  ln -sfFv $DOTFILES/$file $HOME/$file
   echo "${GREEN}✓${NC} $file"
   ln -sfFv $PWD/$file $HOME/ $file
 done
 
-echo "Existing dotfiles have been backed up in $DOTFILES_DIR/dotfiles_old"
+echo "Existing dotfiles have been backed up in $DOTFILES/dotfiles_old"

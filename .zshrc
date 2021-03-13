@@ -1,16 +1,15 @@
 # Environment
-export DOTFILES_DIR="$HOME/code/dotfiles"
+export DOTFILES="$HOME/code/dotfiles"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
 PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 PATH="$PATH:/etc/sonar/bin/macosx-universal-64"
 PATH="$PATH:/etc/sonar-scanner/bin"
-PATH="$PATH:$HOME/.rvm/bin"
 PATH="$PATH:$HOME/.composer/vendor/bin"
 PATH="$PATH:$HOME/.bin"
-PATH="$PATH:$HOME/.local/bin" # deno
-PATH="$PATH:$HOME/.deno/bin" # deno install
+PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/.deno/bin" # `deno install` modules
 export PATH="$PATH"
 
 export EDITOR=code
@@ -22,7 +21,7 @@ compinit
 autoload -U promptinit && promptinit
 prompt pure
 
-autoload $DOTFILES_DIR/zsh_completion.d/deno.zsh
+autoload $DOTFILES/zsh_completion.d/deno.zsh
 
 # Make and Change Dir
 function mkcd() {
@@ -76,10 +75,10 @@ function diff() {
 }
 
 # Aliases
+alias dotfiles="code ~/code/dotfiles"
 alias reset="source $HOME/.zshrc"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-debug="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --remote-debugging-port=9222"
-
 alias gp="git push -u origin HEAD"
 alias gmp="git-poooosh"
 alias gb="git branch"
@@ -89,12 +88,15 @@ alias gcb="git checkout -b"
 alias gs="git status -s"
 alias gl="git log --pretty=format:'%C(cyan)%C(bold)%h%C(reset) %<(60,trunc)%s %<(14)%C(magenta)%ad  %C(magenta)%C(bold)-%C(reset)  %C(blue)%cn%C(reset)'"
 alias fu="git rebase -i HEAD~2"
-
+alias cb="git branch | fzf --header Checkout | xargs git checkout"
+alias dr="docker run --rm"
+alias de="docker exec -it"
 alias cpath="pwd | pbcopy"
 alias hg="history | grep "
 alias c="clear"
 alias ftk="sudo killall VDCAssistant"
 alias fresh="rm .npmrc package-lock.json && rm -rf node_modules && npm i --force --registry=https://registry.npmjs.org/"
+alias deno-local="~/code/deno/target/debug/deno"
 
 # GPG
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
@@ -115,9 +117,12 @@ export NVM_DIR="$HOME/.nvm"
 # . <(node --completion-bash)
 # . <(npm completion)
 
-. $DOTFILES_DIR/partials/bindings.sh
-. $DOTFILES_DIR/partials/directories.sh
-. $DOTFILES_DIR/partials/auto-secrets.sh
+# completions
+# autoload -Uz compinit && compinit
+
+. $DOTFILES/partials/bindings.sh
+. $DOTFILES/partials/directories.sh
+. $DOTFILES/partials/auto-secrets.sh
 . $HOME/.bashrc
 . $HOME/.personal
 . $HOME/.secrets
