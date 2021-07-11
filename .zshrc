@@ -100,14 +100,6 @@ alias ftk="sudo killall VDCAssistant"
 alias fresh="rm .npmrc package-lock.json && rm -rf node_modules && npm i --force --registry=https://registry.npmjs.org/"
 alias deno-local="~/code/deno/target/debug/deno"
 
-# GPG
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
-
 #NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -122,11 +114,13 @@ export NVM_DIR="$HOME/.nvm"
 # completions
 # autoload -Uz compinit && compinit
 
-. $DOTFILES/partials/bindings.sh
-. $DOTFILES/partials/directories.sh
-. $DOTFILES/partials/auto-secrets.sh
-. $HOME/.bashrc
-. $HOME/.personal
-. $HOME/.secrets
+. $DOTFILES/partials/utils.sh
+
+src $DOTFILES/partials/bindings.sh
+src $DOTFILES/partials/directories.sh
+src $DOTFILES/partials/auto-secrets.sh
+src $HOME/.bashrc
+src $HOME/.personal
+src $HOME/.secrets
 
 cd ~/code
