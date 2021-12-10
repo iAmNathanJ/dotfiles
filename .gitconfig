@@ -23,12 +23,12 @@
 [help]
 	autoCorrect = -1
 [commit]
-	# gpgsign = true
+	gpgsign = true
 	template = ~/.gitmessage
 [rebase]
 	autostash = true
-[secrets]
-	providers = ~/code/secrets/provider.js
+# [secrets]
+# 	providers = ~/code/secrets/provider.js
 
 [init]
 	templateDir = ~/.git-template

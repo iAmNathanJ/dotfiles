@@ -1,8 +1,6 @@
 GREEN='\033[1;32m'
 NC='\033[0m'
 
-DOTFILES="$HOME/code/dotfiles"
-
 # Ceate backup directory
 mkdir -p $DOTFILES/dotfiles_old
 
