@@ -3,6 +3,12 @@ PATH="$PATH:$HOME/.deno/bin" # `deno install` modules
 export PATH="$PATH"
 export EDITOR=code
 
+# Load pure prompt
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit && promptinit
+prompt pure
+
+# Completions
 autoload -U compaudit compinit
 compinit
 
@@ -12,10 +18,6 @@ compinit
 # bashcompinit
 # . <(node --completion-bash)
 # . <(npm completion)
-
-# completions
-# autoload -Uz compinit && compinit
-
 
 if [ "$SPIN" ]; then
   export DOTFILES="$HOME/dotfiles"
