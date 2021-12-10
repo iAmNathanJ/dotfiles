@@ -13,8 +13,6 @@ dotfiles=(
   ".gitconfig"
   ".gitmessage"
   ".gitignore_global"
-  ".gitmessage"
-  ".vim"
   ".vimrc"
 )
 
