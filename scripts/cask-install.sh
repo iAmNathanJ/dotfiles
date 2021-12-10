@@ -1,15 +1,15 @@
-brew cask install iterm2
-brew cask install visual-studio-code
+brew install --cask iterm2
+brew install --cask visual-studio-code
 
-brew cask install spectacle
-brew cask install alfred
-brew cask install slack
-brew cask install dropbox
+brew install --cask spectacle
+brew install --cask alfred
+# brew install --cask slack
+# brew install --cask dropbox
 
-brew cask install google-chrome
-brew cask install firefox
+# brew install --cask google-chrome
+brew install --cask firefox
 
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew install --cask font-fira-code
 
-brew cask install gpg-suite
+brew install --cask gpg-suite

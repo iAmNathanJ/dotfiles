@@ -1,7 +1,7 @@
 [user]
 	name = iamnathanj
-	email = jacobs@heysparkbox.com
-	signingkey = iAmNathanJ <jacobs@heysparkbox.com>
+	email = nj@nj.codes
+	signingkey = iAmNathanJ <nj@nj.codes>
 [credential]
 	helper = osxkeychain
 [push]
@@ -23,7 +23,7 @@
 [help]
 	autoCorrect = -1
 [commit]
-	gpgsign = true
+	# gpgsign = true
 	template = ~/.gitmessage
 [rebase]
 	autostash = true

@@ -1,6 +1,10 @@
 # Get Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Add brew to PATH
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/nj/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Brew Packages
 brew install wget
 brew install zsh

@@ -2,13 +2,9 @@
 export DOTFILES="$HOME/code/dotfiles"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
-PATH="$PATH:/usr/local/bin:/~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
-PATH="$PATH:/etc/sonar/bin/macosx-universal-64"
-PATH="$PATH:/etc/sonar-scanner/bin"
-PATH="$PATH:$HOME/.composer/vendor/bin"
 PATH="$PATH:$HOME/.bin"
-PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/.deno/bin" # `deno install` modules
 export PATH="$PATH"
 
@@ -18,6 +14,7 @@ autoload -U compaudit compinit
 compinit
 
 # Load pure prompt
+fpath+=$HOME/.zsh/pure
 autoload -U promptinit && promptinit
 prompt pure
 
