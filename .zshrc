@@ -1,9 +1,3 @@
-export DOTFILES="$HOME/code/dotfiles"
-
-if [ "$SPIN" ]; then
-  export DOTFILES="$HOME/dotfiles"
-fi
-
 PATH="$PATH:$HOME/.bin"
 PATH="$PATH:$HOME/.deno/bin" # `deno install` modules
 export PATH="$PATH"
@@ -22,11 +16,16 @@ compinit
 # completions
 # autoload -Uz compinit && compinit
 
-. $DOTFILES/partials/utils.sh
-. $DOTFILES/partials/directories.sh
 
-if [ ! "$SPIN" ]; then
-  . $DOTFILES/partials/local.sh
+if [ "$SPIN" ]; then
+  export DOTFILES="$HOME/dotfiles"
+  . $DOTFILES/partials/utils.sh
+  . $DOTFILES/partials/directories.sh
 else
-  echo "skipping local settings"
+  export DOTFILES="$HOME/code/dotfiles"
+  git config user.email nj@nj.codes
+  git config commit.gpgsign true
+  . $DOTFILES/partials/utils.sh
+  . $DOTFILES/partials/directories.sh
+  . $DOTFILES/partials/local.sh
 fi

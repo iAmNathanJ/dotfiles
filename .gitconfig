@@ -1,9 +1,5 @@
 [user]
 	name = iamnathanj
-	email = nj@nj.codes
-	signingkey = iAmNathanJ <nj@nj.codes>
-[credential]
-	helper = osxkeychain
 [push]
 	default = matching
 [color]
@@ -23,13 +19,9 @@
 [help]
 	autoCorrect = -1
 [commit]
-	gpgsign = true
 	template = ~/.gitmessage
 [rebase]
 	autostash = true
-# [secrets]
-# 	providers = ~/code/secrets/provider.js
-
 [init]
 	templateDir = ~/.git-template
 	defaultBranch = main
